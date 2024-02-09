@@ -1,0 +1,65 @@
+---
+import Container from "./Container.astro";
+import CheckVerify from "./icons/CheckVerify.astro";
+import LinkedinIcon from "./icons/Linkedin.astro";
+import MailIcon from "./icons/Mail.astro";
+import FileCvIcon from "./icons/FileCv.astro";
+---
+
+<Container>
+  <img
+    class="w-full h-[380px] object-cover object-center rounded-md"
+    src="/joseponencia.webp"
+    alt="Portada de portafolio"
+  />
+  <div
+    class="flex justify-between items-center w-full h-[110px] px-10"
+  >
+    <div class="flex gap-x-3 items-end">
+      <img
+        src="/perfil.webp"
+        class="h-[170px] w-[170px] rounded-full border-4 border-white
+          -mt-20"
+        alt="Imagen de perfil de portafolio"
+      />
+      <div>
+        <h1 class="text-4xl font-bold flex item-center gap-x-3">
+          <span>José Luis</span>
+          <CheckVerify class="size-5 mt-4 text-[#0966FF]" />
+        </h1>
+        <p class="font-semibold text-slate-500 text-lg">
+          Desarrollador web
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-x-3">
+      <button
+        class="bg-slate-200 text-[15px] px-3 py-1.5 rounded-md font-semibold
+          flex items-center justify-center gap-x-2 h-fit"
+      >
+        <FileCvIcon class="size-5" />
+        <span>CV</span>
+      </button>
+      <a
+        class="bg-slate-200 text-[15px] px-3 py-1.5 rounded-md font-semibold
+          flex items-center justify-center gap-x-2 h-fit"
+        href="https://www.linkedin.com/in/jfloresxc/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <LinkedinIcon class="size-5" />
+        Linkedin
+      </a>
+      <a
+        class="bg-slate-200 text-[15px] px-3 py-1.5 rounded-md font-semibold
+          flex items-center justify-center gap-x-2 h-fit"
+        href="https://www.linkedin.com/in/jfloresxc/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <MailIcon class="size-5" />
+        Correo
+      </a>
+    </div>
+  </div>
+</Container>
