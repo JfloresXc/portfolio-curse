@@ -1,3 +1,6 @@
+const colors = require("tailwindcss/colors");
+const fontSize = require("tailwindcss/defaultTheme").fontSize;
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -5,6 +8,14 @@ export default {
   ],
   theme: {
     extend: {},
+    colors: {
+      primary: "#0866FF",
+      ...colors,
+    },
+    fontSize: {
+      ...fontSize,
+      regular: "15px",
+    },
   },
   plugins: [],
 };

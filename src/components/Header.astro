@@ -1,0 +1,32 @@
+---
+import Container from "./Container.astro";
+
+const ENLACES = [
+  { href: "#experiencia", title: "Experiencia" },
+  { href: "#proyectos", title: "Proyectos" },
+  { href: "#sobremi", title: "Contacto" },
+];
+---
+
+<header class="bg-white">
+  <Container>
+    <nav class="flex pt-1">
+      {
+        ENLACES.map(({ href, title }) => {
+          return (
+            <a
+              class="p-4 flex justify-center items-center
+                    font-semibold text-regular text-slate-700 
+                    border-b-[3px] border-transparent hover:border-b-primary
+                    hover:bg-slate-100 rounded-md
+                "
+              href={href}
+            >
+              {title}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </Container>
+</header>
