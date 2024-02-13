@@ -1,16 +1,17 @@
 ---
 import Container from "./Container.astro";
+import Dropdown from "./Dropdown";
 
 const ENLACES = [
   { href: "#experiencia", title: "Experiencia" },
   { href: "#proyectos", title: "Proyectos" },
-  { href: "#sobremi", title: "Contacto" },
+  { href: "#sobremi", title: "Sobre mí" },
 ];
 ---
 
-<header class="bg-white">
+<header id="header" class="bg-white sticky top-0">
   <Container>
-    <nav class="flex pt-1">
+    <nav class="flex pt-1" id="navbar-no-sticky">
       {
         ENLACES.map(({ href, title }) => {
           return (
@@ -28,5 +29,47 @@ const ENLACES = [
         })
       }
     </nav>
+    <nav
+      class="sr-only flex justify-between items-center w-full py-2 pr-2"
+      id="navbar-sticky"
+    >
+      <div class="flex gap-x-3 justify-center items-center">
+        <img
+          src="/perfil.webp"
+          class="h-[45px] w-[45px] rounded-full border-4 border-white"
+          alt="Imagen de perfil de portafolio"
+        />
+        <div class="flex items-end gap-x-3">
+          <h1 class="text-xl font-bold text-nowrap">Jose Flores</h1>
+        </div>
+      </div>
+
+      <Dropdown client:only="react" />
+    </nav>
   </Container>
 </header>
+
+<script>
+  const header = document.getElementById("header");
+  const navbarNoSticky = document.getElementById("navbar-no-sticky");
+  const navbarSticky = document.getElementById("navbar-sticky");
+
+  const alObservar = (entradas, observador) => {
+    const elemento = entradas[0];
+
+    if (elemento.isIntersecting) {
+      navbarNoSticky.classList.add("sr-only");
+      navbarSticky.classList.remove("sr-only");
+    } else {
+      navbarNoSticky.classList.remove("sr-only");
+      navbarSticky.classList.add("sr-only");
+    }
+  };
+
+  const observador = new IntersectionObserver(alObservar, {
+    threshold: 0.1,
+    rootMargin: "0px 0px -95% 0px",
+  });
+
+  observador.observe(header);
+</script>
