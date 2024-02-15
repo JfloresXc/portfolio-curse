@@ -43,8 +43,11 @@ export default function Dropdown() {
   };
 
   return (
-    <div className="relative">
-      <button onClick={handleOpen}>
+    <div className="relative ">
+      <button
+        class="hover:bg-slate-200 px-4 py-2 rounded-md dark:hover:text-black"
+        onClick={handleOpen}
+      >
         <MenuIcon classNames="size-5" />
       </button>
 
