@@ -10,14 +10,17 @@ const ENLACES = [
 ];
 ---
 
-<header id="header" class="bg-white dark:bg-slate-800 sticky top-0">
-  <Container class="flex justify-between items-center">
-    <nav class="flex pt-1" id="navbar-no-sticky">
+<header
+  id="header"
+  class="z-10 bg-white dark:bg-slate-800 sticky top-0 left-0 right-0"
+>
+  <Container class="flex items-center w-auto">
+    <nav class="flex pt-1 w-full" id="navbar-no-sticky">
       {
         ENLACES.map(({ href, title }) => {
           return (
             <a
-              class="p-4 flex justify-center items-center
+              class="p-4 flex justify-center items-center text-nowrap
                     font-semibold text-regular text-slate-700 dark:text-white
                     border-b-[3px] border-transparent hover:border-b-primary
                     hover:bg-slate-100 dark:hover:bg-slate-700 rounded-md
@@ -31,10 +34,10 @@ const ENLACES = [
       }
     </nav>
     <nav
-      class="sr-only flex justify-between items-center py-2 pr-2 w-full"
+      class="sr-only flex justify-between items-center py-2 w-full"
       id="navbar-sticky"
     >
-      <div class="flex gap-x-3 justify-center items-center">
+      <div class="flex gap-x-3 items-center">
         <img
           src="/perfil.webp"
           class="size-[40px] rounded-full border-white"
@@ -44,10 +47,11 @@ const ENLACES = [
           <h1 class="text-xl font-bold text-nowrap">Jose Flores</h1>
         </div>
       </div>
-
       <Dropdown client:only="react" />
     </nav>
+    <!-- <div class="w-full flex justify-end"> -->
     <ButtonDarkMode />
+    <!-- </div> -->
   </Container>
 </header>
 
