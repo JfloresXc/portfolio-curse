@@ -9,6 +9,8 @@ import CardTitle from "../components/CardTitle.astro";
 import Experiencie from "../components/icons/Experiencie.astro";
 import Experiencies from "../components/Experiencies.astro";
 import Projects from "../components/Projects.astro";
+import AboutMeIcon from "../components/icons/AboutMe.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout title="Portafolio de Jose Flores">
@@ -20,12 +22,6 @@ import Projects from "../components/Projects.astro";
         <CardDetalle />
       </div>
       <div class="col-span-6">
-        <!-- <CardContainer>
-          <div class="flex items-center gap-x-3">
-            <ExperiencieIcon class="size-6" />
-            <h3 class="text-xl font-bold">Experiencia</h3>
-          </div>
-        </CardContainer> -->
         <section id="experiencia">
           <CardTitle titulo="Experiencia">
             <Experiencie class="size-6" />
@@ -35,17 +31,21 @@ import Projects from "../components/Projects.astro";
         </section>
 
         <section id="proyectos">
-          <CardTitle titulo="Proyecto">
+          <CardTitle titulo="Proyectos">
             <ProyectoIcon class="size-6" />
           </CardTitle>
 
           <Projects />
         </section>
+
+        <section id="sobremi">
+          <CardTitle titulo="Sobre mí">
+            <AboutMeIcon class="size-6" />
+          </CardTitle>
+
+          <AboutMe />
+        </section>
       </div>
     </div>
   </Container>
 </Layout>
-
-<!-- <style>
- 
-</style> -->

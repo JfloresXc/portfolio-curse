@@ -10,6 +10,7 @@ export default {
     extend: {},
     colors: {
       primary: "#0866FF",
+      "primary-dark": "#2377FF",
       ...colors,
     },
     fontSize: {
@@ -18,4 +19,5 @@ export default {
     },
   },
   plugins: [],
+  darkMode: "class",
 };
